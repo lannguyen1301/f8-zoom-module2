@@ -75,51 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
     showSignupBtn.addEventListener("click", function () {
         showSignupForm();
     });
-
-    //
-    signupForm
-        .querySelector(".auth-form-content")
-        .addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email = document.querySelector("#signupEmail").value;
-            const password = document.querySelector("#signupPassword").value;
-            // console.log(email, password); debug
-
-            const credentials = {
-                email,
-                password,
-            };
-
-            try {
-                const { user, access_token } = await httpRequest.post(
-                    "auth/register",
-                    credentials
-                );
-                // console.log(user, access_token); // debug
-
-                // localStorage là một API lưu trữ dữ liệu trên trình duyệt dưới dạng key-value (cặp khóa-giá trị)
-                // ✅ Lưu trạng thái đăng nhập (ví dụ: token xác thực)
-                localStorage.setItem("accessToken", access_token);
-            } catch (error) {
-                // console.log(error); // debug
-                // console.dir(error); // debug
-
-                if (error?.response?.error?.code === "EMAIL_EXISTS") {
-                    console.log(error.response.error.message);
-                }
-            }
-        });
-    // giải thích từng dòng code:
-    // signupForm: là 1 biến DOM
-    // .querySelector(".auth-form-content"): tìm phần tử con bên trong signupForm có class là .auth-form-content
-    // .addEventListener("submit", (e) => {// code...});
-    // gắn trình lắng ghe sự kiện cho sự kiện "submit" của form
-    // Khi người dùng nhấn nút "Đăng ký" haocwj "Submit", hàm callback (e) =>{//code..}sẽ được gọi.
-    // e là ĐỐI TƯỢNG SỰ KIỆN chứa thông tin về hành động submit
-    // e.preventDefault(); ngăn chặn hành vi mặc định
-    // const email = document.querySelector("#signupEmail").value; tìm phần tử có id = signupEmail, lấy giá trị của người dùng nhập và gán vào biến email
-    // const passwordl = document.querySelector("#signupPassword"").value; tìm phần tử có id = signupPassword, lấy giá trị của người dùng nhập và gán vào biến email
-    // console.log(email, password); in ra thông số nội sung của email
 });
 
 // User Menu Dropdown Functionality

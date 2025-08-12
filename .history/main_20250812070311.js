@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // console.log(error); // debug
                 // console.dir(error); // debug
 
-                if (error?.response?.error?.code === "EMAIL_EXISTS") {
-                    console.log(error.response.error.message);
+                if (error.response.error.ocde === "EMAIL_EXISTS") {
+                    //
                 }
             }
         });

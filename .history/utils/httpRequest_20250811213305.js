@@ -1,0 +1,5 @@
+class HttpRequest {
+    constructor() {
+        super();
+    }
+}

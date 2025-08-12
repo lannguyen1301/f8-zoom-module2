@@ -89,25 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 email,
                 password,
             };
-
-            try {
-                const { user, access_token } = await httpRequest.post(
-                    "auth/register",
-                    credentials
-                );
-                // console.log(user, access_token); // debug
-
-                // localStorage là một API lưu trữ dữ liệu trên trình duyệt dưới dạng key-value (cặp khóa-giá trị)
-                // ✅ Lưu trạng thái đăng nhập (ví dụ: token xác thực)
-                localStorage.setItem("accessToken", access_token);
-            } catch (error) {
-                // console.log(error); // debug
-                // console.dir(error); // debug
-
-                if (error?.response?.error?.code === "EMAIL_EXISTS") {
-                    console.log(error.response.error.message);
-                }
-            }
         });
     // giải thích từng dòng code:
     // signupForm: là 1 biến DOM

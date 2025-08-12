@@ -101,12 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // ✅ Lưu trạng thái đăng nhập (ví dụ: token xác thực)
                 localStorage.setItem("accessToken", access_token);
             } catch (error) {
-                // console.log(error); // debug
-                // console.dir(error); // debug
-
-                if (error?.response?.error?.code === "EMAIL_EXISTS") {
-                    console.log(error.response.error.message);
-                }
+                console.log(error);
             }
         });
     // giải thích từng dòng code:
