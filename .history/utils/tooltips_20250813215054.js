@@ -1,0 +1,3 @@
+class Tooltip {
+    constructor()
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đen - Spotify</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/tooltips.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="modal-overlay show" id="authModal">
+        <div class="modal-container">
+
+
+            <div class="modal-content">
+                <!-- <div class="modal-logo">
+                    <i class="fab fa-spotify"></i>
+                </div> -->
+
+                <!-- Sign Up Form -->
+                <div class="auth-form" id="signupForm" style="display: block;">
+                    <div class="header-edit">
+                        <h1 class="modal-heading">
+                            Edit detail
+                        </h1>
+                        <button class="modal-close" id="modalClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form class="auth-form-content">
+                        <div class="form-group invalid">
+                            <input type="email" placeholder="Email address" class="form-input" id="signupEmail">
+                            <div class="error-message">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Please enter a valid email
+                                    address</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-input" id="signupPassword">
+                            <div class="error-message">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Password must be at least 8
+                                    characters</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="auth-submit-btn">
+                            Sign Up
+                        </button>
+                    </form>
+
+                    <div class="auth-switch">
+                        <span>Already have an account? </span>
+                        <button class="auth-link" id="showLogin">
+                            Log in here
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Login Form -->
+                <div class="auth-form" id="loginForm" style="display: none">
+                    <h1 class="modal-heading">Log in to Spotify</h1>
+
+                    <form class="auth-form-content">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email address" class="form-input" id="loginEmail">
+                            <div class="error-message">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Please enter a valid email
+                                    address</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-input" id="loginPassword">
+                            <div class="error-message">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Please enter your password</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="auth-submit-btn">
+                            Log In
+                        </button>
+                    </form>
+
+                    <div class="auth-switch">
+                        <span>Don't have an account? </span>
+                        <button class="auth-link" id="showSignup">
+                            Sign up here
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="main.js" type="module"></script> -->
+    <!-- <script src="main.js" type="module"></script> -->
+</body>
+
+</html>

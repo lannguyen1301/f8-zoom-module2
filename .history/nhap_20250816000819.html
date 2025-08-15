@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đen - Spotify</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/tooltips.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+        .modal-container.modal-content-edit {
+            max-width: 600px;
+        }
+
+        .header-edit {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .modal-heading.header-edit-title {
+            margin-bottom: 0;
+        }
+
+        .modal-close.modal-close-edit {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+
+        }
+
+        .auth-form-content.auth-form-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        .edit-form-group {
+            display: flex;
+            flex: 1;
+            /* align-items: center; */
+            /* justify-content: center; */
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .profile-group {
+            display: block;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+        }
+
+        .profile-group .profile-img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .input-profile {
+            display: none;
+        }
+
+        .form-group .editor {
+            height: auto;
+            min-height: 100px;
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            font-size: 16px;
+        }
+
+        .editor::placeholder {
+            color: var(--text-muted);
+        }
+
+
+        /* footer group */
+        .footer-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-group-desc {
+            font-size: 16px;
+            font-weight: bold;
+            text-align: justify;
+        }
+
+        .auth-submit-btn.auth-footer-group {
+            max-width: 84px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="modal-overlay show" id="authModalEdit">
+        <div class="modal-container modal-content-edit">
+            <div class="modal-content">
+                <!-- Edit detail -->
+                <div class="auth-form" id="editDetailForm" style="display: block;">
+                    <div class="header-edit">
+                        <h1 class="modal-heading header-edit-title">
+                            Edit detail
+                        </h1>
+                        <button class="modal-close modal-close-edit" id="modalClose">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <form class="auth-form-content auth-form-group">
+                        <!-- Avatar -->
+                        <div class="form-group">
+                            <label for="profile" class="profile-group">
+                                <img src="./assets/img/avatar-icon.png" alt="" class="profile-img">
+                            </label>
+                            <input type="file" name="profile" id="profile" class="input-profile" multiple required
+                                accept="image/*" autofocus readonly>
+                        </div>
+
+                        <!-- My Playlist -->
+                        <div class="edit-form-group">
+                            <div class="form-group">
+                                <!-- <label for="name">Display Name</label> -->
+                                <input type="text" name="name" id="name" class="form-input" maxlength="20" minlength="5"
+                                    pattern="[" size="30" placeholder="Enter your Playlist" autocomplete="on"
+                                    spellcheck="false" autofocus="">
+                            </div>
+
+                            <!-- textarea -->
+                            <div class="form-group">
+                                <label for="editor" hidden>Nội dung</label>
+                                <div id="editor" class="editor" contenteditable="" placeholder="Nhập nội dung..."
+                                    name="content" oninput="content.innerHTML = this.innerHTML"></div>
+                                <textarea id="content" name="content" hidden=""></textarea>
+                            </div>
+                        </div>
+
+                    </form>
+                    <div class="footer-group">
+                        <p class="footer-group-desc">By proceeding, you agree to give Spotify access to the image
+                            you choose to upload. Please
+                            make sure you have the right to upload the image.</p>
+                        <button type="submit" class="auth-submit-btn auth-footer-group">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
